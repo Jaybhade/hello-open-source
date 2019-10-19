@@ -13,4 +13,13 @@ function retrieveData (name) {
 
 }
 
-print(retrieveData(argv))
+function retrieveDatamail (mail) {
+  try {
+    const file = require(`./peoples/${mail}.js`)
+    return file
+  } catch(e) {
+    console.error(e)
+    return 'EMPTY'
+  }
+
+print(retrieveDatamail(argv))
